@@ -91,16 +91,24 @@
             <artifactId>spring-webmvc</artifactId>
         </dependency>
         <!--Spring SpringMVC 相关结束-->
-
-        <!-- Spring Security -->
+        <!--Spring Security相关 开始-->
         <dependency>
             <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
+            <artifactId>spring-security-core</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-config</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+        </dependency>
+        <!--Spring Security相关 结束-->
     </dependencies>
     <build>
         <finalName>security01</finalName>

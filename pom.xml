@@ -110,11 +110,10 @@
                 <version>${springframework.version}</version>
             </dependency>
             <!--Spring SpringMVC 相关结束-->
-
-            <!-- Spring Security -->
+            <!--Spring Security相关 开始-->
             <dependency>
                 <groupId>org.springframework.security</groupId>
-                <artifactId>spring-security-web</artifactId>
+                <artifactId>spring-security-core</artifactId>
                 <version>${springsecurity.version}</version>
             </dependency>
             <dependency>
@@ -122,6 +121,17 @@
                 <artifactId>spring-security-config</artifactId>
                 <version>${springsecurity.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-taglibs</artifactId>
+                <version>${springsecurity.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.security</groupId>
+                <artifactId>spring-security-web</artifactId>
+                <version>${springsecurity.version}</version>
+            </dependency>
+            <!--Spring Security相关 结束-->
 
             <dependency>
                 <groupId>javax.servlet</groupId>

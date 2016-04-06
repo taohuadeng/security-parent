@@ -2,12 +2,9 @@
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
-    <title>index</title>
+    <title>admin</title>
 </head>
 <body>
-username : <sec:authentication property="name"/>
-<hr>
-<a href="admin.jsp">admin.jsp</a>
-<a href="j_spring_security_logout">退出登陆</a>
+<h1>admin.jsp</h1>
 </body>
 </html>
