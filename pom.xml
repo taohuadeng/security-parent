@@ -8,6 +8,7 @@
     <modules>
         <module>security01</module>
         <module>security02</module>
+        <module>security03</module>
     </modules>
 
     <properties>
