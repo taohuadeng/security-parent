@@ -5,6 +5,7 @@
 </head>
 <body>
 <form action="login" method="post">
+    <h1>admin登录页</h1>
     <table>
         <tr>
             <td>用户名：</td>
