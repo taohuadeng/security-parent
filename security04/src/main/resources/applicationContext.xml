@@ -11,7 +11,7 @@
         <intercept-url pattern="/**" access="ROLE_USER"/>
 
         <session-management invalid-session-url="/success.jsp?error=invalid-session-url">
-            <concurrency-control max-sessions="2" error-if-maximum-exceeded="false" expired-url="/success.jsp?error=expired-url"/>
+            <concurrency-control max-sessions="1" error-if-maximum-exceeded="false" expired-url="/success.jsp?error=expired-url"/>
             <!--org.springframework.security.web.session.SimpleRedirectInvalidSessionStrategy-->
         </session-management>
     </http>

@@ -46,4 +46,13 @@
     <session-config>
         <session-timeout>1</session-timeout>
     </session-config>
+
+    <servlet>
+        <servlet-name>hello</servlet-name>
+        <servlet-class>com.spring.security.security04.HelloServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>hello</servlet-name>
+        <url-pattern>hello.do</url-pattern>
+    </servlet-mapping>
 </web-app>

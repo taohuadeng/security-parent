@@ -9,6 +9,7 @@
         <module>security01</module>
         <module>security02</module>
         <module>security03</module>
+        <module>security04</module>
     </modules>
 
     <properties>
