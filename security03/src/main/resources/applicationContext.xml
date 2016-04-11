@@ -10,24 +10,45 @@
         <intercept-url pattern="/admin.jsp" access="ROLE_ADMIN"/>
         <intercept-url pattern="/**" access="ROLE_USER"/>
 
-        <session-management invalid-session-url="/success.jsp?error=invalid-session-url">
-            <concurrency-control max-sessions="2" error-if-maximum-exceeded="false" expired-url="/success.jsp?error=expired-url"/>
-            <!--org.springframework.security.web.session.SimpleRedirectInvalidSessionStrategy-->
-        </session-management>
+        <!--<session-management invalid-session-url="/success.jsp?error=invalid-session-url">
+            <concurrency-control max-sessions="2" error-if-maximum-exceeded="false"
+                                 expired-url="/success.jsp?error=expired-url"/>
+            &lt;!&ndash;org.springframework.security.web.session.SimpleRedirectInvalidSessionStrategy&ndash;&gt;
+        </session-management>-->
     </http>
     <!--
         user登录跳转首页 teacher登录403
     -->
     <authentication-manager>
         <authentication-provider>
-            <jdbc-user-service data-source-ref="dataSource"/>
+            <jdbc-user-service data-source-ref="dataSource" cache-ref="userCache"/>
         </authentication-provider>
     </authentication-manager>
 
-    <beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <beans:bean id="userCache" class="org.springframework.security.core.userdetails.cache.EhCacheBasedUserCache">
+        <beans:property name="cache" ref="userEhCache"/>
+    </beans:bean>
+
+    <beans:bean id="userEhCache" class="org.springframework.cache.ehcache.EhCacheFactoryBean">
+        <beans:property name="cacheManager" ref="cacheManager"/>
+        <!--<beans:property name="cacheName" value="userCache"/>-->
+    </beans:bean>
+
+    <beans:bean id="cacheManager" class="org.springframework.cache.ehcache.EhCacheManagerFactoryBean">
+        <beans:property name="configLocation" value="classpath:/ehcache.xml"/>
+    </beans:bean>
+
+    <!--<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <beans:property name="driverClassName" value="org.postgresql.Driver"/>
-        <beans:property name="url" value="jdbc:postgresql://localhost:5432/security"/>
+        <beans:property name="url" value="jdbc:postgresql://192.168.1.151:5432/security"/>
         <beans:property name="username" value="postgres"/>
         <beans:property name="password" value="thd123"/>
+    </beans:bean>-->
+
+    <beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <beans:property name="driverClassName" value="org.postgresql.Driver"/>
+        <beans:property name="url" value="jdbc:postgresql://192.168.1.218:5432/elf"/>
+        <beans:property name="username" value="postgres"/>
+        <beans:property name="password" value="Eln4postgres"/>
     </beans:bean>
 </beans:beans>

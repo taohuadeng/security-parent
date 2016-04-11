@@ -41,9 +41,4 @@
         <error-code>403</error-code>
         <location>/403.jsp</location>
     </error-page>
-
-    <!--配置session过期时间 1分钟-->
-    <session-config>
-        <session-timeout>1</session-timeout>
-    </session-config>
 </web-app>
